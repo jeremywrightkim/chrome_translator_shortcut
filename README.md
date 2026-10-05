@@ -4,9 +4,15 @@
 
 우클릭 → "한국어(으)로 번역"이나 주소창 번역 아이콘 → "한국어"를 누르는 과정을 대신 해 줍니다. 크롬 자체 번역 기능을 그대로 쓰므로 번역 결과는 크롬 기본 번역과 같습니다.
 
+## 다운로드
+
+[Releases](https://github.com/jeremywrightkim/chrome_translator_shortcut/releases/latest)에서 `TranslatorShortcut.exe`를 받아 원하는 폴더에 두고 실행합니다. 설치 과정은 없습니다.
+
+코드 서명이 되어 있지 않아 처음 실행할 때 Windows SmartScreen 경고가 뜰 수 있습니다. [추가 정보] → [실행]을 누르면 됩니다. 직접 빌드하려면 아래 [빌드](#빌드)를 참고하세요.
+
 ## 사용법
 
-1. `bin\TranslatorShortcut.exe`를 실행하면 작업 표시줄 오른쪽 트레이에 아이콘이 생깁니다.
+1. `TranslatorShortcut.exe`를 실행하면 작업 표시줄 오른쪽 트레이에 아이콘이 생깁니다.
 2. 크롬에서 `Alt+T`를 누르면 한국어로 번역되고, 다시 누르면 원문으로 돌아옵니다.
 
 번역할 언어는 크롬 설정을 따릅니다 (`chrome://settings/languages` → Google 번역).
@@ -110,6 +116,7 @@ powershell -ExecutionPolicy Bypass -File .\build.ps1
 | `src\Hotkeys.cs` | 단축키 검사, 표시, 저장 형식 |
 | `src\Settings.cs` | 설정 파일, 자동 실행 등록, 로그 |
 | `src\NativeMethods.cs` | Win32 API 선언 |
+| `src\AssemblyInfo.cs` | exe 파일 속성(이름, 버전) |
 | `assets\` | 아이콘, 앱 매니페스트 |
 | `tools\make-icon.ps1` | 아이콘 생성 |
 | `build.ps1` | 빌드 |

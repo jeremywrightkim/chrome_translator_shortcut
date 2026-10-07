@@ -45,6 +45,7 @@ namespace TranslatorShortcut
             menu.Items.Add(new ToolStripSeparator());
             menu.Items.Add(settingsItem);
             menu.Items.Add("로그 폴더 열기", null, OnOpenLogFolder);
+            menu.Items.Add("후원하기…", null, OnOpenSupport);
             menu.Items.Add(new ToolStripSeparator());
             menu.Items.Add("종료", null, OnExit);
 
@@ -245,6 +246,21 @@ namespace TranslatorShortcut
         {
             System.IO.Directory.CreateDirectory(AppInfo.DataDir);
             Process.Start("explorer.exe", "\"" + AppInfo.DataDir + "\"");
+        }
+
+        // 기본 브라우저로 후원 페이지를 연다.
+        private void OnOpenSupport(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(AppInfo.SupportUrl);
+            }
+            catch (Exception ex)
+            {
+                Log.Write("후원 페이지를 열지 못했습니다: " + ex.Message);
+                MessageBox.Show("후원 페이지를 열지 못했습니다.\n" + AppInfo.SupportUrl, AppInfo.Name,
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void OnExit(object sender, EventArgs e)

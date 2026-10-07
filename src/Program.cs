@@ -7,6 +7,7 @@ namespace TranslatorShortcut
     internal static class AppInfo
     {
         public const string Name = "번역 단축키";
+        public const string SupportUrl = "https://cgcg.review/support/";
 
         public static string DataDir
         {

@@ -9,13 +9,13 @@ namespace TranslatorShortcut
     {
         public const Keys Default = Keys.Alt | Keys.T;
 
-        // Ctrl 또는 Alt가 포함되어 있거나, F1~F24 단독 키여야 한다.
+        // Ctrl 또는 Alt가 포함되어 있거나, F1~F12 단독 키여야 한다.
         public static bool IsValid(Keys hotkey)
         {
             Keys key = hotkey & Keys.KeyCode;
             if (key == Keys.None || IsModifierKey(key)) return false;
             if ((hotkey & (Keys.Control | Keys.Alt)) != 0) return true;
-            return key >= Keys.F1 && key <= Keys.F24;
+            return key >= Keys.F1 && key <= Keys.F12;
         }
 
         public static bool IsModifierKey(Keys key)

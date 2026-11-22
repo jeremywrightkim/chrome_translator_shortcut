@@ -11,7 +11,7 @@ namespace TranslatorShortcut
     // 단축키와 자동 실행은 [확인]을 눌러야 적용되고, 보정과 기본값 복원은 바로 파일에 저장된다.
     internal sealed class SettingsForm : Form
     {
-        private const string HotkeyHint = "입력 칸을 누른 뒤 새 단축키를 누르세요. Ctrl 또는 Alt를 함께 누르거나 F1~F24 키를 쓸 수 있습니다.";
+        private const string HotkeyHint = "입력 칸을 누른 뒤 새 단축키를 누르세요. Ctrl 또는 Alt를 함께 누르거나 F1~F12 키를 쓸 수 있습니다.";
 
         private readonly Func<Keys, bool> isHotkeyAvailable;
         private readonly Keys originalHotkey;
